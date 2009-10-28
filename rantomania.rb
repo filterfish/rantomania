@@ -30,7 +30,11 @@ end
 
 post '/rant/' do
   pp params
-  Rant.create(:rant => params['rant'])
+  if params['rant']
+    Rant.create(:rant => params['rant'])
+  else
+    puts "Where's your data mother fucker"
+  end
 end
   
 not_found do
