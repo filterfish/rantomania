@@ -1,10 +1,7 @@
-%ul
-  %li Rant!!!111!
-  %li Rant!!!111!
-  %li Rant!!!111!
-  %li Rant!!!111!
-  %li Rant!!!111!
-  %li Rant 1
-  %li Rant 1
-  %li Rant 1
-  %li Rant 1
+%h1
+  rants
+
+- @rants.each do |rant|
+  %div.rant
+    %h3
+      =rant.rant
