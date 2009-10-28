@@ -7,9 +7,9 @@
     %meta(author="Richard Heycock, Josh Price, James Sadler, Simon Swayne")
     %meta(name="description" content="What's fucking you off right now?")
     %meta(name="keywords" content="rant, fuck, shit, bastard, cunt")
-    
+
     %link(href="/css/screen.css" media="screen" rel="stylesheet" type="text/css")
-    
+
     %style
       :sass
         body
@@ -25,7 +25,7 @@
             font-weight: bold
             font-size: 500%
             padding: 0.5em 0
-            
+
         .body
           .fuckoff
             margin: 1em
@@ -41,7 +41,7 @@
             textarea.rant
               width: 99%
               height: 200px
-              font-size: 120%
+              font-size: 200%
             input[name=rant]
               -moz-border-radius-bottomleft: 5px
               -moz-border-radius-topleft: 5px
@@ -55,11 +55,20 @@
               font-weight: bold
               font-size: 16px
               color: #333
+          ul.rants
+            margin: 2px 0
+            li
+              list-style: none
+              border: 1px solid #000
+              padding: 5px
+              margin: 2px 0
+              background: #fff
+              font-size: 200%
         .footer
           text-align: center
         li.twitter
           background: transparent url(images/twitter.gif) no-repeat scroll left center
-          
+
   %body
     .container
       .header
@@ -67,12 +76,13 @@
       .body
         .fuckoff
           %h3
-            What's fucking you off right now?
+            - salutation = ["What's fucking you off right now?", "What the fucks up with you?", "Que?"]
+            = salutation[rand(3)]
             %span.chars 1000
           %textarea.rant
           %input(type="submit" name="rant" value="Rant!")
         
-        = yield
+          = yield
         
       .footer
-        
+

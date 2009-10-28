@@ -1,7 +1,7 @@
 %h1
   rants
 
-- @rants.each do |rant|
-  %ul.rants
+%ul.rants
+  - @rants.each do |rant|
     %li
       =rant.rant
