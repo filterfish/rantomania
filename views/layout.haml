@@ -1,76 +1,78 @@
 !!!
 %html(lang="en")
   %head
-    %title Crazy Judah - Industrial Strength Rock
+    %title Rant-O-Mania!!!one!1!
     %meta(http-equiv="content-type" content="text/html" charset="utf-8")
     %meta(http-equiv="content-language" content="en")
-    %meta(author="Josh Price")
-    %meta(name="description" content="Crazy Judah is a Sydney based band which plays rock covers with an uncompromising, hard-edged style. Their setlist spans the 60s, 70s, 80s and 90s to the bands of today. The classic rock of Deep Purple, Bad Company, Pink Floyd and Santana. The big-hair rock of Bon Jovi and Van Halen. The stadium rock of INXS and U2 and the grunge sounds of Audioslave, Stone Temple Pilots and the Foo Fighters, to bands like Coldplay and Muse.")
-    %meta(name="keywords" content="Crazy Judah, Sydney, Australia, band, rock, covers, rock band, hard rock, cover band, 60s, 70s, 80s, 90s, classic rock, Deep Purple, Bad Company, Pink Floyd, Santana, Bon Jovi, Van Halen, stadium rock, INXS, U2, grunge, Audioslave, Stone Temple Pilots, Foo Fighters, Coldplay, Muse")
+    %meta(author="Richard Heycock, Josh Price, James Sadler, Simon Swayne")
+    %meta(name="description" content="What's fucking you off right now?")
+    %meta(name="keywords" content="rant, fuck, shit, bastard, cunt")
     
     %link(href="/css/screen.css" media="screen" rel="stylesheet" type="text/css")
     
     %style
       :sass
         body
-          background: #090909
+          background: #111
         .container
-          background: #151515 url('/images/plans.png')
-          border: 1px solid #111
+          background: #f11
         .header
-          text-align: center
-        .parch-img
-          text-align: center
-        .parchment
-          min-height: 365px
-          background: url('/images/parchment.png') top center no-repeat
-        .parch-box
-          padding-top: 2em
-        .gauge
-          background: url('/images/gauge.png') left center no-repeat
-          h2
-            margin-bottom: 0
-            a
-              margin: 1em 0 0 -0.5em
-              color: #f22
+          background: #111
+          margin-bottom: 2em
+          h1
+            color: #999
+            text-decoration: none
+            font-weight: bold
+            font-size: 500%
+            padding: 0.5em 0
+            
+        .body
+          .fuckoff
+            margin: 1em
+            h3
+              color: #111
+              font-size: 200%
               font-weight: bold
-              text-decoration: none
+              span.chars
+                float: right
+                font-size: 140%
+                color: #aaa
+                margin: -1em 0 0 0 
+            textarea.rant
+              width: 99%
+              height: 200px
+              font-size: 120%
+            input[name=rant]
+              -moz-border-radius-bottomleft: 5px
+              -moz-border-radius-topleft: 5px
+              -moz-border-radius-bottomright: 5px
+              -moz-border-radius-topright: 5px
+              float: right
+              background-image: #f11 url(http://s.twimg.com/a/1256674706/images/round-btn.gif)
+              height: 32px
+              width: 115px
+              border: none
+              font-weight: bold
+              font-size: 16px
+              color: #333
         .footer
           text-align: center
-        ul.setlist
-          list-style-type: none
-          line-height: 1.4
-          li
-            a
-              padding-left: 2em
         li.twitter
           background: transparent url(images/twitter.gif) no-repeat scroll left center
-        li.facebook
-          background: transparent url(images/facebook.png) no-repeat scroll left center
           
   %body
     .container
       .header
-        %h1.small
-          Crazy Judah
-          %a(href="/")
-            %img(src="/images/logo.png")
-      .container.prepend-2
-        .gauge.span-3.prepend-2
-          %h2
-            %a(href="/") Home
-        .gauge.span-3.prepend-2
-          %h2
-            %a(href="/demos") Demos
-        .gauge.span-3.prepend-2
-          %h2
-            %a(href="/setlist") Set List
-        .gauge.span-3.prepend-2.last
-          %h2
-            %a(href="/band") Band
-          
-      .body.parchment
+        %h1 RANT-O-MANIA
+      .body
+        .fuckoff
+          %h3
+            What's fucking you off right now?
+            %span.chars 1000
+          %textarea.rant
+          %input(type="submit" name="rant" value="Rant!")
+        
         = yield
         
       .footer
-        %img(src="/images/footer.png")
+        
