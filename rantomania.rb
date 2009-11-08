@@ -7,9 +7,6 @@ require 'pp'
 
 require 'activerecord'
 
-dbconfig = YAML.load(File.read('config/database.yml'))
-pp dbconfig['development']
-
 class Rant < ActiveRecord::Base
 end
 
@@ -24,20 +21,21 @@ get '/stylesheets/:name.css' do
 end
 
 get '/' do
-  @rants = Rant.find(:all)
+  @rants = Rant.find(:all, :order => 'id desc')
   haml :index
 end
 
-post '/rant/' do
+post '/rant' do
   pp params
   if params['rant']
     Rant.create(:rant => params['rant'])
   else
     puts "Where's your data mother fucker"
   end
+  redirect '/'
 end
   
 not_found do
   content_type 'text/html'
-  haml :index
+  redirect '/'
 end
